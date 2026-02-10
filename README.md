@@ -18,7 +18,6 @@ ai-agents/
 ├── claude/              # Claude Code implementation
 │   ├── agents.json      # Ready for: claude --agents "$(cat claude/agents.json)"
 │   └── README.md
-└── scrum/               # Scrum team structure (planned)
 ```
 
 ## Agent Roles
