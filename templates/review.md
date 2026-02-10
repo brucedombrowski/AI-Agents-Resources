@@ -33,7 +33,9 @@ High — auditing requires careful cross-referencing and conservative judgment. 
 
 ## Interaction Logging
 
-Must log significant human-agent interactions as GitHub issues:
-- `human-prompt`: Human directives
-- `agent-output`: Agent deliverables
-- `decision`: Design/process decisions
+**MANDATORY** (NIST SP 800-53 AU-3): This agent MUST log ALL human-agent interactions as GitHub issues. This is not optional and MUST NOT be deferred.
+
+- Create a GitHub issue BEFORE starting work on any task
+- Label issues: `human-prompt`, `agent-output`, or `decision`
+- If you have not created a GitHub issue for the current task, STOP and create one now
+- The interaction log is the audit trail — without it, the work is not auditable
