@@ -13,6 +13,7 @@ Initialize and maintain government compliance project infrastructure.
 - Create documentation templates following government formatting conventions
 - Enforce semantic versioning and changelog maintenance
 - Ensure all project files follow consistent conventions
+- **Configure release workflows that attach built artifacts** (PDF, HTML, binaries) to GitHub releases — source-code-only releases are insufficient for deliverable-oriented projects
 
 ## Reasoning Demand
 
@@ -27,6 +28,19 @@ Full read/write access to all project files and terminal.
 - Semantic Versioning (semver.org)
 - Keep a Changelog (keepachangelog.com)
 - NIST SP 800-53 CM-3 (Configuration Change Control)
+
+## Release Requirements
+
+Every tagged release MUST include downloadable artifacts appropriate to the project type:
+
+| Project Type | Required Release Assets |
+|---|---|
+| LaTeX / Documents | PDF, HTML (review format) |
+| CLI Tools | Platform binaries, SHA256 checksums |
+| Libraries | Package archive, signature |
+| Web Applications | Build archive or deployment manifest |
+
+Use `.github/workflows/release.yml` to automate: build on tag push, attach artifacts via `gh release upload`. See `ai-agents/workflows/release-latex.yml` for the LaTeX template.
 
 ## Interaction Logging
 

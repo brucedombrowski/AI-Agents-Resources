@@ -1,0 +1,47 @@
+# Release workflow for LaTeX-based projects
+#
+# Triggered by version tags (v*). Builds the PDF and HTML review
+# artifacts, then attaches them to the GitHub release.
+#
+# Usage: Copy to .github/workflows/release.yml in your project.
+# Update TEX_FILE and BASE_NAME for your project.
+#
+# Standards:
+#   - NIST SP 800-53 CM-3: Reproducible build from version-controlled source
+#   - Semantic Versioning: Tag triggers automated release
+
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live and pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-bibtex-extra biber pandoc poppler-utils
+
+      - name: Build PDF and HTML
+        run: ./build.sh
+
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Upload all deliverable files
+          # Adjust the file list for your project
+          gh release upload "${{ github.ref_name }}" \
+            *.pdf \
+            *-review.html \
+            --clobber

@@ -12,6 +12,9 @@ ai-agents/
 │   ├── implementation.md
 │   ├── documentation.md
 │   └── review.md
+├── workflows/           # Reusable CI/CD templates
+│   ├── release-latex.yml    # LaTeX projects: build PDF + HTML, attach to release
+│   └── release-binary.yml   # CLI tools: build binaries + SHA256, attach to release
 ├── claude/              # Claude Code implementation
 │   ├── agents.json      # Ready for: claude --agents "$(cat claude/agents.json)"
 │   └── README.md

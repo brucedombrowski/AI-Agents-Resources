@@ -1,0 +1,48 @@
+# Release workflow for binary / CLI tool projects
+#
+# Triggered by version tags (v*). Builds platform-specific binaries,
+# generates SHA256 checksums, and attaches to the GitHub release.
+#
+# Usage: Copy to .github/workflows/release.yml in your project.
+# Update the build steps for your language/platform.
+#
+# Standards:
+#   - NIST SP 800-53 CM-3: Reproducible build from version-controlled source
+#   - NIST SP 800-53 SI-7: Software integrity verification (SHA256 checksums)
+
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Adjust for your target platforms
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          # Replace with your build command
+          ./build.sh
+
+      - name: Generate checksums
+        run: |
+          sha256sum *.tar.gz *.zip 2>/dev/null > SHA256SUMS.txt || true
+
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ github.ref_name }}" \
+            *.tar.gz *.zip SHA256SUMS.txt \
+            --clobber 2>/dev/null || true
