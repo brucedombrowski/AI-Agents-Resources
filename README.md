@@ -18,6 +18,8 @@ ai-agents/
 ├── claude/              # Claude Code implementation
 │   ├── agents.json      # Ready for: claude --agents "$(cat claude/agents.json)"
 │   └── README.md
+└── team/                # Organizational documentation
+    └── org-chart.md     # Bruce Dombrowski Inc team structure
 ```
 
 ## Agent Roles
@@ -69,6 +71,10 @@ claude --model sonnet  # For implementation or documentation
 - [SendCUIEmail](https://github.com/brucedombrowski/SendCUIEmail) — CUI encryption tool
 - [Security Toolkit](https://github.com/brucedombrowski/security-toolkit) — Automated NIST control verification
 - [Scrum](https://github.com/brucedombrowski/Scrum) — Scrum Guide implementation with AI agents
+
+## Team
+
+See [team/org-chart.md](team/org-chart.md) for the Bruce Dombrowski Inc organizational structure and human-AI collaboration model.
 
 ## License
 
