@@ -15,7 +15,8 @@ ai-agents/
 │   ├── requirements.md
 │   ├── implementation.md
 │   ├── documentation.md
-│   └── review.md
+│   ├── review.md
+│   └── troubleshooting.md
 ├── workflows/           # Reusable CI/CD templates
 │   ├── release-latex.yml    # LaTeX projects: build PDF + HTML, attach to release
 │   └── release-binary.yml   # CLI tools: build binaries + SHA256, attach to release
@@ -33,6 +34,7 @@ ai-agents/
 | implementation | Write compliant code per requirements | Sonnet |
 | documentation | Decision memos, verification docs, LaTeX | Sonnet |
 | review | Audit artifacts (read-only, separation of duties) | Opus |
+| troubleshooting | Diagnose failures via issues, instrument reporters, drive atomic test cycles | Opus |
 
 ## Adding a New Agent Role Template
 

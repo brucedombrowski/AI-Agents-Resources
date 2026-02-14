@@ -11,7 +11,8 @@ ai-agents/
 │   ├── requirements.md
 │   ├── implementation.md
 │   ├── documentation.md
-│   └── review.md
+│   ├── review.md
+│   └── troubleshooting.md
 ├── workflows/           # Reusable CI/CD templates
 │   ├── release-latex.yml    # LaTeX projects: build PDF + HTML, attach to release
 │   └── release-binary.yml   # CLI tools: build binaries + SHA256, attach to release
@@ -31,6 +32,7 @@ ai-agents/
 | Implementation | Write compliant code per requirements | Medium |
 | Documentation | Decision memos, verification docs, LaTeX | Medium |
 | Review | Audit artifacts (read-only, separation of duties) | High |
+| Troubleshooting | Diagnose failures via issues, instrument reporters, drive atomic test cycles | High |
 
 ## Design Principles
 
