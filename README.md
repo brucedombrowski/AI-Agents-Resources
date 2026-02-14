@@ -71,6 +71,7 @@ claude --model sonnet  # For implementation or documentation
 - [SendCUIEmail](https://github.com/brucedombrowski/SendCUIEmail) — CUI encryption tool
 - [Security Toolkit](https://github.com/brucedombrowski/security-toolkit) — Automated NIST control verification
 - [Scrum](https://github.com/brucedombrowski/Scrum) — Scrum Guide implementation with AI agents
+- [run-tracker](https://github.com/brucedombrowski/run-tracker) — GitHub issue-based run tracking for two-laptop workflows
 
 ## Team
 

@@ -96,6 +96,7 @@ These projects use the ai-agents templates:
 - [Security Toolkit](https://github.com/brucedombrowski/security-toolkit) — Automated NIST control verification
 - [Scrum](https://github.com/brucedombrowski/Scrum) — Scrum Guide implementation with AI agents
 - [LaTeX](https://github.com/brucedombrowski/LaTeX) — LaTeX templates for government compliance documents
+- [run-tracker](https://github.com/brucedombrowski/run-tracker) — GitHub issue-based run tracking for two-laptop workflows
 
 ## Standards Encoded
 

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Reference to [run-tracker](https://github.com/brucedombrowski/run-tracker) — GitHub issue-based run tracking extracted from ORBIT-CEF-Status into its own repo
 - `workflows/` directory with reusable CI/CD templates
   - `release-latex.yml` — LaTeX projects: build PDF + HTML, attach to GitHub releases
   - `release-binary.yml` — CLI tools: build binaries + SHA256 checksums, attach to releases
