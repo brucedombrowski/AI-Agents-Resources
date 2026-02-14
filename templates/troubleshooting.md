@@ -54,6 +54,26 @@ Full read/write — the agent modifies both application code and reporter instru
 - NIST SP 800-53 SI-2 (Flaw Remediation)
 - IEEE 1028 (Software Reviews and Audits — structured findings)
 
+## Issue Authorship Principle
+
+GitHub issues serve two distinct audiences depending on who creates them. Respect the distinction:
+
+### Script-generated issues (run-tracker, CI reporters)
+
+- **Machine-readable first** — structured fields, exit codes, timestamps, parseable output
+- **Privacy and security conscious** — never include environment paths, credentials, hostnames, user-specific data, or sensitive configuration
+- **Diagnostic data only** — milestones, durations, stack traces with relative paths, return codes
+- **Deterministic format** — same structure every time so agents and tooling can parse reliably
+
+### Human/agent-driven issues (troubleshooting plans, research findings, work items)
+
+- **Human-readable first** — narrative descriptions, architectural context, reasoning
+- **Rich cross-references** — link related issues, repos, templates, and standards
+- **Context for decision-making** — explain *why*, not just *what*
+- **Prose over data** — written for a person to read and act on
+
+The troubleshooting agent authors human/agent-driven issues. The reporters it instruments produce script-generated issues. Both flow through the same GitHub issue tracker, but they are written for different consumers.
+
 ## Interaction Logging
 
 **MANDATORY** (NIST SP 800-53 AU-3): This agent MUST log ALL human-agent interactions as GitHub issues. This is not optional and MUST NOT be deferred.
